@@ -64,32 +64,38 @@
                                     <div class="media-body">
                                         <div ng-switch on="user.Status">
                                             <div ng-switch-when="RequestWithdrawn">
-                                                <h5 class="media-heading"><strong>{{ user.name }}</strong></h5>
+                                                <h5 class="media-heading"><strong>{{ user.name | titleCase }}</strong>
+                                                </h5>
                                                 <small class="bg-danger all-pd-2 text-shadow">Applied, still open
                                                 </small>
                                             </div>
                                             <div ng-switch-when="Rejected">
-                                                <h5 class="media-heading "><strong>{{ user.name }}</strong></h5>
+                                                <h5 class="media-heading "><strong>{{ user.name | titleCase }}</strong>
+                                                </h5>
                                                 <small class="bg-danger all-pd-2 text-shadow">Applied still open
                                                 </small>
                                             </div>
                                             <div ng-switch-when="confirm">
-                                                <h5 class="media-heading green"><strong>{{ user.name }}</strong></h5>
+                                                <h5 class="media-heading green"><strong>{{ user.name | titleCase
+                                                        }}</strong></h5>
                                                 <small class="bg-success all-pd-2 text-shadow">Invited, and joined
                                                 </small>
                                             </div>
                                             <div ng-switch-when="Complete">
-                                                <h5 class="media-heading green"><strong>{{ user.name }}</strong></h5>
+                                                <h5 class="media-heading green"><strong>{{ user.name |
+                                                        titleCase}}</strong></h5>
                                                 <small class="bg-success all-pd-2 text-shadow">Invited, and joined
                                                 </small>
                                             </div>
                                             <div ng-switch-when="Accepted">
-                                                <h5 class="media-heading green"><strong>{{ user.name }}</strong></h5>
+                                                <h5 class="media-heading green"><strong>{{ user.name |
+                                                        titleCase}}</strong></h5>
                                                 <small class="bg-success all-pd-2 text-shadow">Invited, and joined
                                                 </small>
                                             </div>
                                             <div ng-switch-default>
-                                                <h5 class="media-heading blue"><strong>{{ user.name }}</strong></h5>
+                                                <h5 class="media-heading blue"><strong>{{ user.name |
+                                                        titleCase}}</strong></h5>
                                                 <small class="bg-info all-pd-2 text-shadow">Invited</small>
                                             </div>
                                         </div>
@@ -107,12 +113,24 @@
 
 <script>
     var app = angular.module('teamApp', []);
+
+
     app.controller('teamController', function ($scope, $http) {
         $http.get("https://teams.tryexzeo.com/knockathon/teams")
                 .success(function (response) {
                     $scope.teams = response;
                 })
     });
+
+    app.filter('titleCase', function () {
+        return function (input) {
+            input = input || '';
+            return input.replace(/\w\S*/g, function (txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+        };
+    });
+
     app.filter('unique', function () {
         return function (collection, keyname) {
             var output = [],
