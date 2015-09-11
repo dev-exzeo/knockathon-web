@@ -219,3 +219,11 @@ hr {
     color:black;
     border: 1px solid #ffe116;
 }
+
+.panel {
+    max-height: 300px;
+}
+
+.panel-body {
+    overflow-y: scroll;
+}
