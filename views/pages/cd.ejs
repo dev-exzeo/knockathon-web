@@ -18,25 +18,17 @@
         $(document).ready(function () {
 
             var time = 0;
+            var clock = $('.clock').FlipClock({});
+            clock.setCountdown(true);
 
-            if (target1.getTime() > start)
+            if (start.getTime() < target1.getTime()) {
                 time = (target1.getTime() - start.getTime()) / 1000;
-            else
-                time = (target1.getTime() - start.getTime()) / 1000;
-
-            if (time > 0) {
                 $("#message").html("Time left to start ..");
-                var clock = $('.clock').FlipClock({});
-                clock.setCountdown(true);
                 clock.setTime(time);
                 clock.start();
             } else {
-                $("#message").html("Time left to finish the race");
                 time = (target2.getTime() - start.getTime()) / 1000;
-                clock = $('.clock').FlipClock({
-                    clockFace: 'DailyCounter'
-                });
-                clock.setCountdown(true);
+                $("#message").html("Time left to finish the race");
                 clock.setTime(time);
                 clock.start();
             }
