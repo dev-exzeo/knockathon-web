@@ -227,3 +227,8 @@ hr {
 .panel-body {
     overflow-y: scroll;
 }
+
+.media-list  {
+    height: 227px;
+    overflow-y: scroll;
+}
