@@ -176,5 +176,39 @@ body {
 .teams {
     min-height: 100%;
     height:auto !important;
-    height: 100%;
+}
+
+.theme-title {
+    font-size:3em;
+}
+
+.theme-block {
+    /*border: 1px solid #000;*/
+    margin-top: 14px;
+    /*background-color: #FCFADB;*/
+    color: #B77673; /*#f4534d;*/
+}
+
+.theme-tagline {
+    font-size:1.5em;
+    font-weight: normal;
+}
+
+hr {
+    border-top: 1px solid #E6B0B0!important;
+}
+
+.simple-list li {
+    margin-top: 12px!important;
+}
+
+.boxed {
+    background-color: lightyellow;
+    padding-left:60px!important;
+    padding-right:80px!important;
+    padding-bottom:40px!important;
+    padding-top:40px!important;
+    margin-bottom: 80px;
+    color:black;
+    border: 1px solid #ffe116;
 }
