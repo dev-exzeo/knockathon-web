@@ -176,5 +176,28 @@ body {
 .teams {
     min-height: 100%;
     height:auto !important;
-    height: 100%;
+}
+
+.theme-title {
+    font-size:3em;
+}
+
+.theme-block {
+    /*border: 1px solid #000;*/
+    margin-top: 14px;
+    /*background-color: #FCFADB;*/
+    color: #B77673; /*#f4534d;*/
+}
+
+.theme-tagline {
+    font-size:1.5em;
+    font-weight: lighter;
+}
+
+hr {
+    border-top: 1px solid #E6B0B0!important;
+}
+
+.simple-list li {
+    margin-top: 12px!important;
 }
