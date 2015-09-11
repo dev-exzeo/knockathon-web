@@ -191,7 +191,7 @@ body {
 
 .theme-tagline {
     font-size:1.5em;
-    font-weight: lighter;
+    font-weight: normal;
 }
 
 hr {
@@ -200,4 +200,15 @@ hr {
 
 .simple-list li {
     margin-top: 12px!important;
+}
+
+.boxed {
+    background-color: lightyellow;
+    padding-left:60px!important;
+    padding-right:80px!important;
+    padding-bottom:40px!important;
+    padding-top:40px!important;
+    margin-bottom: 80px;
+    color:black;
+    border: 1px solid #ffe116;
 }
